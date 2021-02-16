@@ -1,0 +1,33 @@
+---
+users:
+  'itops1':
+    comment: 'IT support team id'
+    groups: ['BUILTIN\Power Users']
+    password: 'puppetlabs'
+#  'admin':
+#    comment: 'Admin user'
+#    groups: ['BUILTIN\Administrators']
+#    password: 'puppetlabs'
+  'john':
+    comment: 'User account for John Doe'
+    groups: ['BUILTIN\Users','BUILTIN\Power Users']
+    password: 'puppetlabs'
+  'bob':
+    comment: 'User account for Bob'
+    groups: ['BUILTIN\Users']
+    password: 'puppetlabs'
+  'alice':
+    comment: 'User account for alice'
+    groups: ['BUILTIN\Users']
+    password: 'puppetlabs'
+  'guest':
+    comment: 'User account for Guest'
+    groups: ['BUILTIN\Guests']
+    password: 'guest'
+groups:
+  'Users':
+    members: ['NT AUTHORITY\INTERACTIVE','NT AUTHORITY\Autheticated Users']
+  'Guests':
+    members: ['NT AUTHORITY\Guest']
+#classes:
+#  - profile::winuser
