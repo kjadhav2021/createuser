@@ -9,7 +9,14 @@ class createuser {
     user{ $username:
       ensure   => 'present',
       comment  => $attrs['comment'],
+      groups   => $attrs['groups'],
       password => $attrs['password'],
+    }
+  }
+  lookup('groups',Hash,'hash').each | String $groupname, Hash $grpattrs | {
+    group{ $groupname:
+    ensure  =>'present',
+    members => $grpattrs['members'],
     }
   }
 }
