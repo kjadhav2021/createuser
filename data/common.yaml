@@ -4,10 +4,14 @@ users:
     comment: 'IT support team id'
     groups: ['BUILTIN\Power Users']
     password: 'puppetlabs'
-#  'admin':
-#    comment: 'Admin user'
-#    groups: ['BUILTIN\Administrators']
-#    password: 'puppetlabs'
+  'webapp':
+    comment: 'user id for web application'
+    groups: ['BUILTIN\Users']
+    password: 'puppetlabs'
+  'smbuser':
+    comment: 'user id for smb file share'
+    groups: ['BUILTIN\Users']
+    password: 'puppetlabs'
   'john':
     comment: 'User account for John Doe'
     groups: ['BUILTIN\Users','BUILTIN\Power Users']
@@ -25,9 +29,9 @@ users:
     groups: ['BUILTIN\Guests']
     password: 'guest'
 groups:
-  'Users':
-    members: ['NT AUTHORITY\INTERACTIVE','NT AUTHORITY\Autheticated Users']
-  'Guests':
-    members: ['NT AUTHORITY\Guest']
+  'Developers':
+    members: ['WIN-AGENT-1\Alice','WIN-AGENT-1\Bob']
+  'Applications':
+    members: ['WIN-AGENT-1\Webapp','WIN-AGENT-1\Smbuser']
 #classes:
 #  - profile::winuser
